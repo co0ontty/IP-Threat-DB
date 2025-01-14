@@ -1,0 +1,28 @@
+name: Python CI and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2  
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Run Python script
+      run: python build.py
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.run_id }} 
+        name: Release ${{ github.run_id }}
+        body: auto release
+        files: ./ip-threat.db
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
