@@ -15,6 +15,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+    - name: Download 5k
+      run: curl -L -o 5k.txt '${{ secrets.URL_5K }}'
+    - name: Download 20k
+      run: curl -L -o 20k.txt '${{ secrets.URL_20K }}'
+    - name: Download 50k
+      run: curl -L -o 50k.txt '${{ secrets.URL_50K }}'
     - name: Run Python script
       run: python build.py
     - name: Create Release
