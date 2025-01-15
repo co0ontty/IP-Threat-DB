@@ -30,3 +30,14 @@ then
 35.203.210.243 => LIGHT_MALICIOUS
 ```
 
+## How To Use
+
+```python
+from ipdb import IPDB
+
+db = IPDB()
+db.load('./ip-threat.db')
+
+db.get(b'1.1.1.1')
+```
+
