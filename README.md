@@ -15,8 +15,10 @@ This repository runs automatically every day and publishes the database to the r
 Clone the repository:
 
 ```bash
-git clone https://github.com/username/IP-Threat-DB.git
+git clone https://github.com/co0ontty/IP-Threat-DB.git
 cd IP-Threat-DB
+
+wget https://github.com/co0ontty/IP-Threat-DB/releases/latest/download/ip-threat.db
 
 python3 cli.py
 ```

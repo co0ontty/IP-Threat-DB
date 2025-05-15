@@ -10,7 +10,6 @@ level = [
     'MEDIUM_MALICIOUS',
     'CRITICAL_MALICIOUS'
 ]
-
 def main():
     db = IPDB()
     db.load('./ip-threat.db')
